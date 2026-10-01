@@ -2,10 +2,10 @@
 const sampleTracks = [
   {
     id: 1,
-    title: "madam",
-    artist: "Nighgt Eight Ug",
-    cover: "https://via.placeholder.com/150/FFCE00/000000?text=Eddy+Kenzo",
-    fileUrl: "https://mega.nz/file/ANNiHT6B#qJR2gQVSBRIPSy6R2iHWwA2RPqOC6m2zIbTqM9JaBjo",
+    title: "Omunyankole",
+    artist: "Nighgt Eight UG & Unpredictable 256",
+    cover: "https://mega.nz/file/FVllCTJB#UPCjMroW5lRIoDcL54kg5tV2ry5zvT7M6nyqhnAPhbI",
+    fileUrl: "https://mega.nz/file/8RkHzIyZ#d_fNF8mZ0RPnI23x5s4u3XrbFBUrcyGrwMo5Ho7jVKI",
     downloads: 14200
   },
   {
