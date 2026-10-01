@@ -20,7 +20,7 @@ const sampleTracks = [
     title: "Enyanda",
     artist: "Sheebah",
     cover: "https://mega.nz/file/8MlRXCAb#1gPJeun8cDd_H4TiPT73_vWUpsvN9-5Cy-kYAFr6ajg",
-    fileUrl: ""https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkDu-sOb0dzj3gtAlxUEp7_ncET9iMbiX-1VsU8CBfs1UN2hzuBjRrByZf-8-842KZHoNbmETRdUNZoEjdG8f4JQ3lDsUCmE-CBtllmxyUBvMIU_TELw6deHppxJxRXhDw9N7EQ7KNWWWv8yx4q6FI_dMkiI3bkjNSeJ4MQ_3eLV1b2wdNqDnjnIiK7Ek/s320/enyanda.jpg"",
+    fileUrl: "https://mega.nz/file/0dlngYiL#EQCEKg7xNhwScc-XK0LHo8fxVS182fZrz9aidxkN8Ig",
     downloads: 9800
   },
   {
