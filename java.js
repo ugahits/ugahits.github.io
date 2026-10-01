@@ -2,10 +2,10 @@
 const sampleTracks = [
   {
     id: 1,
-    title: "Sitya Loss",
-    artist: "Eddy Kenzo",
+    title: "madam",
+    artist: "Nighgt Eight Ug",
     cover: "https://via.placeholder.com/150/FFCE00/000000?text=Eddy+Kenzo",
-    fileUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    fileUrl: "https://mega.nz/file/ANNiHT6B#qJR2gQVSBRIPSy6R2iHWwA2RPqOC6m2zIbTqM9JaBjo",
     downloads: 14200
   },
   {
