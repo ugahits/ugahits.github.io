@@ -4,7 +4,7 @@ const sampleTracks = [
     id: 1,
     title: "Omunyankole",
     artist: "Nighgt Eight UG & Unpredictable 256",
-    cover: "https://mega.nz/file/FVllCTJB#UPCjMroW5lRIoDcL54kg5tV2ry5zvT7M6nyqhnAPhbI",
+    cover: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZ3v84lUCesxAWEoZY3ahltIpIYiWvpPFrCiUUk6AqsnoSHSo_1VGoyp5Oa8s5uWdg04S3sK5aeW3UpKz5qS1zw7Sb4bUdR-ym4zaMpkWAmiLjfohrgpZ0HcwkPO9U0awqjNAb6Hl7RXNleyyHC_wfu_RP3ExiVAM9zzk-p6aTvr5UjD-gZZRQC0Y53r0/s275/OMUNYANKOLE.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="320" data-original-height="275" data-original-width="183" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZ3v84lUCesxAWEoZY3ahltIpIYiWvpPFrCiUUk6AqsnoSHSo_1VGoyp5Oa8s5uWdg04S3sK5aeW3UpKz5qS1zw7Sb4bUdR-ym4zaMpkWAmiLjfohrgpZ0HcwkPO9U0awqjNAb6Hl7RXNleyyHC_wfu_RP3ExiVAM9zzk-p6aTvr5UjD-gZZRQC0Y53r0/s320/OMUNYANKOLE.jpg",
     fileUrl: "https://mega.nz/file/8RkHzIyZ#d_fNF8mZ0RPnI23x5s4u3XrbFBUrcyGrwMo5Ho7jVKI",
     downloads: 14200
   },
