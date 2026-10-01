@@ -12,7 +12,7 @@ const sampleTracks = [
     id: 2,
     title: "Daily Bundle",
     artist: "Elijah Kitaka",
-    cover: "https://mega.nz/file/QcNC3C5Z#9SgTRJOnaf5-dXn2U8dgxLxvyYJ1hbEoFzA-p6viQOQ",
+    cover: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTTSeviKjhdBdC1_yLo3dtVIRiLTptGms8zvavhGo-KRyUJ5UQpBWQK3ZTHHH6b4Sv8U0jPVtvsE423CRUiJOp89qpTEsYDTl5JOQYsEhoTVD36vlMme0d_cBQ8MIP1wulZoiAZ6gyuj_rekJF_pdififCAyZHGu4TxjEvUuOU7oAelE-XLt6zzcSOrlM/s320/daily%20bundle.jpg",
     fileUrl: "https://mega.nz/file/ANE1CZ6I#7CFOVGtNgmAu5sN9uwJnpF8V3EDog3BjGR5pzmr22wY",
     downloads: 9800
   },
@@ -20,7 +20,7 @@ const sampleTracks = [
     title: "Enyanda",
     artist: "Sheebah",
     cover: "https://mega.nz/file/8MlRXCAb#1gPJeun8cDd_H4TiPT73_vWUpsvN9-5Cy-kYAFr6ajg",
-    fileUrl: "https://mega.nz/file/0dlngYiL#EQCEKg7xNhwScc-XK0LHo8fxVS182fZrz9aidxkN8Ig",
+    fileUrl: ""https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkDu-sOb0dzj3gtAlxUEp7_ncET9iMbiX-1VsU8CBfs1UN2hzuBjRrByZf-8-842KZHoNbmETRdUNZoEjdG8f4JQ3lDsUCmE-CBtllmxyUBvMIU_TELw6deHppxJxRXhDw9N7EQ7KNWWWv8yx4q6FI_dMkiI3bkjNSeJ4MQ_3eLV1b2wdNqDnjnIiK7Ek/s320/enyanda.jpg"",
     downloads: 9800
   },
   {
@@ -35,7 +35,7 @@ const sampleTracks = [
     id: 5,
     title: "Muramu",
     artist: "Nice Avia",
-    cover: "https://mega.nz/file/YFVDFSiZ#xDxQQg-0bf3PIFqz1eQ9hdHkXwnvwbf5xuFYRFbNqbo",
+    cover: "href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpBRB86AOY0rW-3W4C332UPpWr3vpobpk-Hv2MaY_khNzjBQSpDZ3kqvi0mGefrfSFDF0I9aBQ1ThuGI7oroPzaz1r8RJ-eFj0kdl7JJXDPAiyF-SsnACcDRmiVIlc9SH9GX1jJXLBw-x9FFQJgFL2Wwtn_i_OQCzJNbMTM6IaagAWCozvH9j-gGYljAg/s447/muramu.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="320" data-original-height="447" data-original-width="447" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpBRB86AOY0rW-3W4C332UPpWr3vpobpk-Hv2MaY_khNzjBQSpDZ3kqvi0mGefrfSFDF0I9aBQ1ThuGI7oroPzaz1r8RJ-eFj0kdl7JJXDPAiyF-SsnACcDRmiVIlc9SH9GX1jJXLBw-x9FFQJgFL2Wwtn_i_OQCzJNbMTM6IaagAWCozvH9j-gGYljAg/s320/muramu.jpg",
     fileUrl: "https://mega.nz/file/dR9gDKBK#8YQAm5ROG-OdVp7iKhJ1wSE8LB5GUjhiz6SVylXTnLQ",
     downloads: 1420
   },
