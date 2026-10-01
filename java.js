@@ -4,7 +4,7 @@ const sampleTracks = [
     id: 1,
     title: "Omunyankole",
     artist: "Nighgt Eight UG & Unpredictable 256",
-    cover: ""https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZ3v84lUCesxAWEoZY3ahltIpIYiWvpPFrCiUUk6AqsnoSHSo_1VGoyp5Oa8s5uWdg04S3sK5aeW3UpKz5qS1zw7Sb4bUdR-ym4zaMpkWAmiLjfohrgpZ0HcwkPO9U0awqjNAb6Hl7RXNleyyHC_wfu_RP3ExiVAM9zzk-p6aTvr5UjD-gZZRQC0Y53r0/s320/OMUNYANKOLE.jpg",
+    cover: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZ3v84lUCesxAWEoZY3ahltIpIYiWvpPFrCiUUk6AqsnoSHSo_1VGoyp5Oa8s5uWdg04S3sK5aeW3UpKz5qS1zw7Sb4bUdR-ym4zaMpkWAmiLjfohrgpZ0HcwkPO9U0awqjNAb6Hl7RXNleyyHC_wfu_RP3ExiVAM9zzk-p6aTvr5UjD-gZZRQC0Y53r0/s320/OMUNYANKOLE.jpg",
     fileUrl: "https://mega.nz/file/8RkHzIyZ#d_fNF8mZ0RPnI23x5s4u3XrbFBUrcyGrwMo5Ho7jVKI",
     downloads: 14200
   },
@@ -35,7 +35,7 @@ const sampleTracks = [
     id: 5,
     title: "Muramu",
     artist: "Nice Avia",
-    cover: "href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpBRB86AOY0rW-3W4C332UPpWr3vpobpk-Hv2MaY_khNzjBQSpDZ3kqvi0mGefrfSFDF0I9aBQ1ThuGI7oroPzaz1r8RJ-eFj0kdl7JJXDPAiyF-SsnACcDRmiVIlc9SH9GX1jJXLBw-x9FFQJgFL2Wwtn_i_OQCzJNbMTM6IaagAWCozvH9j-gGYljAg/s447/muramu.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="320" data-original-height="447" data-original-width="447" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpBRB86AOY0rW-3W4C332UPpWr3vpobpk-Hv2MaY_khNzjBQSpDZ3kqvi0mGefrfSFDF0I9aBQ1ThuGI7oroPzaz1r8RJ-eFj0kdl7JJXDPAiyF-SsnACcDRmiVIlc9SH9GX1jJXLBw-x9FFQJgFL2Wwtn_i_OQCzJNbMTM6IaagAWCozvH9j-gGYljAg/s320/muramu.jpg",
+    cover: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpBRB86AOY0rW-3W4C332UPpWr3vpobpk-Hv2MaY_khNzjBQSpDZ3kqvi0mGefrfSFDF0I9aBQ1ThuGI7oroPzaz1r8RJ-eFj0kdl7JJXDPAiyF-SsnACcDRmiVIlc9SH9GX1jJXLBw-x9FFQJgFL2Wwtn_i_OQCzJNbMTM6IaagAWCozvH9j-gGYljAg/s320/muramu.jpg",
     fileUrl: "https://mega.nz/file/dR9gDKBK#8YQAm5ROG-OdVp7iKhJ1wSE8LB5GUjhiz6SVylXTnLQ",
     downloads: 1420
   },
