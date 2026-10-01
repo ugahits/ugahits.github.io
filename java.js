@@ -10,33 +10,33 @@ const sampleTracks = [
   },
   {
     id: 2,
-    title: "B2C Hits",
-    artist: "B2C Entertainment",
-    cover: "https://via.placeholder.com/150/D90000/FFFFFF?text=B2C",
-    fileUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    title: "Daily Bundle",
+    artist: "Elijah Kitaka",
+    cover: "https://mega.nz/file/QcNC3C5Z#9SgTRJOnaf5-dXn2U8dgxLxvyYJ1hbEoFzA-p6viQOQ",
+    fileUrl: "https://mega.nz/file/ANE1CZ6I#7CFOVGtNgmAu5sN9uwJnpF8V3EDog3BjGR5pzmr22wY",
     downloads: 9800
   },
   {id: 3,
     title: "Enyanda",
     artist: "Sheebah",
-    cover: "https://via.placeholder.com/150/D90000/FFFFFF?text=B2C",
-    fileUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    cover: "https://mega.nz/file/8MlRXCAb#1gPJeun8cDd_H4TiPT73_vWUpsvN9-5Cy-kYAFr6ajg",
+    fileUrl: "https://mega.nz/file/0dlngYiL#EQCEKg7xNhwScc-XK0LHo8fxVS182fZrz9aidxkN8Ig",
     downloads: 9800
   },
   {
     id: 4,
-    title: "Katono",
-    artist: "Bebe Cool",
+    title: "Finary",
+    artist: "Spice Diana",
     cover: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcNzilb5G3h2kL6Kw2dj9uWki7gLBYdjeUVglY4JZ-9Q2AjjduhyphenhyphenBAPXDtejqqVaXFeIYZ4J-zEMV2Z6Y7xU9GuXP4lJEXAqM8REf5hDNAMx1IONPccGeuGvubXBTwnwMiWmoPaFVKMLl1S7OcbZCdZpXMot1WJVHW9BBzXfWE9ESVB0Qu7GWjzfQ8AdNv/s768/Alupo-Epel-meeting-the-IOM-Director-General-Her-Excellency-Amy-Pope.jpg",
-    fileUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    fileUrl: "https://mega.nz/file/wVUwUCxA#vgFgsKcv2nwE4F8om6qD20JJ-UDwAQwdfSF_MOM2iAo",
     downloads: 7500
   },
   {
     id: 5,
     title: "Muramu",
     artist: "Nice Avia",
-    cover: "https://via.placeholder.com/150/FFCE00/000000?text=Eddy+Kenzo",
-    fileUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    cover: "https://mega.nz/file/YFVDFSiZ#xDxQQg-0bf3PIFqz1eQ9hdHkXwnvwbf5xuFYRFbNqbo",
+    fileUrl: "https://mega.nz/file/dR9gDKBK#8YQAm5ROG-OdVp7iKhJ1wSE8LB5GUjhiz6SVylXTnLQ",
     downloads: 1420
   },
 ];
