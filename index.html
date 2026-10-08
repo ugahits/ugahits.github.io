@@ -3,7 +3,846 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        <style>
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        body {
+            background: #090909;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #000;
+            border-bottom: 3px solid #ffd600;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+            color: #ffd600;
+        }
+
+        .logo span {
+            color: #e60000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 620px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 70px 7%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.96),
+                    rgba(0,0,0,.78),
+                    rgba(0,0,0,.35)
+                ),
+                radial-gradient(
+                    circle at 75% 50%,
+                    #b00000,
+                    #000 65%
+                );
+
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-small {
+            color: #e60000;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffd600;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background: #e60000;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn-primary:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn-secondary {
+            background: #ffd600;
+            color: #000;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+        }
+
+
+        /* ================= SEARCH ================= */
+
+        .search-section {
+            width: 90%;
+            max-width: 800px;
+            margin: -35px auto 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            background: #151515;
+            border: 2px solid #ffd600;
+            padding: 7px;
+            border-radius: 50px;
+
+            display: flex;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,.6);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 16px;
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .search-box button {
+            border: none;
+            background: #e60000;
+            color: #fff;
+            padding: 0 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .search-box button:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+
+        /* ================= GENERAL SECTION ================= */
+
+        .section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 70px;
+        }
+
+        .section-header {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 25px;
+
+            border-left: 5px solid #e60000;
+            padding-left: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 30px;
+        }
+
+        .section-header h2 span {
+            color: #ffd600;
+        }
+
+        .view-all {
+            color: #ffd600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .view-all:hover {
+            color: #e60000;
+        }
+
+
+        /* ================= MUSIC GRID ================= */
+
+        .music-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 22px;
+        }
+
+        .music-card {
+
+            background: #121212;
+
+            border: 1px solid #292929;
+
+            border-radius: 11px;
+
+            overflow: hidden;
+
+            transition: .3s;
+
+        }
+
+        .music-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: #ffd600;
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,.6);
+
+        }
+
+
+        .music-cover {
+
+            height: 210px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e60000,
+                    #222,
+                    #000
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .music-cover img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+        .music-placeholder {
+
+            font-size: 65px;
+            color: #ffd600;
+
+        }
+
+        .play-button {
+
+            position: absolute;
+
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #ffd600;
+
+            color: #000;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+
+            opacity: 0;
+
+            transform: scale(.8);
+
+            transition: .3s;
+
+        }
+
+        .music-card:hover .play-button {
+
+            opacity: 1;
+            transform: scale(1);
+
+        }
+
+
+        .music-info {
+
+            padding: 17px;
+
+        }
+
+        .music-info h3 {
+
+            font-size: 18px;
+            margin-bottom: 7px;
+
+        }
+
+        .music-info h3 span {
+            color: #ffd600;
+        }
+
+        .music-info p {
+
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 13px;
+
+        }
+
+        .music-meta {
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #777;
+            font-size: 12px;
+
+        }
+
+
+        /* ================= TRENDING ================= */
+
+        .trending-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+        }
+
+        .trend-item {
+
+            background: #111;
+
+            border: 1px solid #292929;
+
+            border-radius: 9px;
+
+            padding: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            transition: .3s;
+
+        }
+
+        .trend-item:hover {
+
+            border-color: #e60000;
+            transform: translateX(5px);
+
+        }
+
+        .rank {
+
+            width: 40px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffd600;
+            text-align: center;
+        }
+
+        .trend-cover {
+
+            width: 65px;
+            height: 65px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e60000,
+                    #222
+                );
+
+            border-radius: 7px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+        }
+
+        .trend-info {
+
+            flex: 1;
+
+        }
+
+        .trend-info h3 {
+
+            font-size: 16px;
+            margin-bottom: 5px;
+
+        }
+
+        .trend-info p {
+
+            color: #888;
+            font-size: 13px;
+
+        }
+
+        .trend-play {
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            background: #e60000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #fff;
+
+        }
+
+
+        /* ================= FEATURED ARTIST ================= */
+
+        .featured {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #170000,
+                    #0b0b0b
+                );
+
+            border: 1px solid #470000;
+
+            border-left: 5px solid #e60000;
+
+            border-radius: 12px;
+
+            padding: 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 35px;
+
+        }
+
+        .featured-image {
+
+            width: 210px;
+            height: 210px;
+
+            border-radius: 50%;
+
+            flex-shrink: 0;
+
+            border: 5px solid #ffd600;
+
+            background: #222;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+        }
+
+        .featured-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+        .featured-placeholder {
+
+            font-size: 70px;
+            color: #e60000;
+
+        }
+
+        .featured-content h2 {
+
+            font-size: 32px;
+            margin-bottom: 8px;
+
+        }
+
+        .featured-content h2 span {
+
+            color: #ffd600;
+
+        }
+
+        .featured-content .location {
+
+            color: #e60000;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+        }
+
+        .featured-content p {
+
+            color: #bbb;
+
+            line-height: 1.7;
+
+            max-width: 700px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .featured-btn {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background: #ffd600;
+
+            color: #000;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* ================= ARTIST CTA ================= */
+
+        .artist-cta {
+
+            background: #e60000;
+
+            text-align: center;
+
+            padding: 65px 20px;
+
+        }
+
+        .artist-cta h2 {
+
+            font-size: 38px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .artist-cta p {
+
+            color: #fff;
+
+            margin-bottom: 25px;
+
+        }
+
+        .artist-cta a {
+
+            display: inline-block;
+
+            background: #000;
+
+            color: #ffd600;
+
+            padding: 14px 30px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: .3s;
+
+        }
+
+        .artist-cta a:hover {
+
+            background: #ffd600;
+            color: #000;
+
+        }
+
+
+          /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 2px solid #ffd600;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            color: #ffd600;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffd600;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: #ffd600;
+        }
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 1000px) {
+
+            .music-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns:
+                    2fr 1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width: 750px) {
+
+            header {
+
+                flex-direction: column;
+                gap: 15px;
+
+            }
+
+            nav {
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+            }
+
+            nav a {
+
+                margin: 5px 8px;
+
+            }
+
+            .hero {
+
+                min-height: 540px;
+                padding: 60px 7%;
+
+            }
+
+            .hero h1 {
+
+                font-size: 45px;
+
+            }
+
+            .music-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .trending-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .featured {
+
+                flex-direction: column;
+                text-align: center;
+
+            }
+
+            .footer-content {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .hero h1 {
+
+                font-size: 37px;
+
+            }
+
+            .hero p {
+
+                font-size: 16px;
+
+            }
+
+            .search-box button {
+
+                padding: 0 18px;
+
+            }
+
+            .music-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .music-cover {
+
+                height: 260px;
+
+            }
+
+            .footer-content {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+    </style>
 
     <title>Ugahits - Ugandan Music</title>
 </head>
