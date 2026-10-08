@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ugahits</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: #fff;
+        }
+
+        /* HEADER */
+        header {
+            background: #000;
+            border-bottom: 3px solid #ffd600;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+            color: #ffd600;
+        }
+
+        .logo span {
+            color: #e60000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(
+                rgba(0,0,0,0.78),
+                rgba(0,0,0,0.9)
+            ),
+            radial-gradient(circle at center, #b30000, #000 65%);
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffd600;
+        }
+
+        .hero p {
+            color: #ddd;
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            width: 90%;
+            max-width: 1150px;
+            margin: 60px auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 40px;
+        }
+
+        /* CONTACT INFO */
+        .contact-info {
+            background: #111;
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 5px solid #ffd600;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .contact-info h2 {
+            color: #ffd600;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .contact-info > p {
+            color: #bbb;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            background: #e60000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .info-box h4 {
+            color: #ffd600;
+            margin-bottom: 5px;
+        }
+
+        .info-box p {
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* SOCIALS */
+        .socials {
+            margin-top: 30px;
+        }
+
+        .socials h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .socials a {
+            display: inline-flex;
+            width: 42px;
+            height: 42px;
+            background: #222;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            margin-right: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: #e60000;
+            color: #ffd600;
+            transform: translateY(-3px);
+        }
+
+        /* FORM */
+        .contact-form {
+            background: #111;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .contact-form h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .contact-form h2 span {
+            color: #e60000;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffd600;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            background: #080808;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 7px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #ffd600;
+            box-shadow: 0 0 5px rgba(255,214,0,0.3);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #e60000;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        /* CTA */
+        .cta {
+            background: #e60000;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 50px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: #000;
+            color: #ffd600;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #ffd600;
+        }
+
+        footer .footer-logo {
+            color: #ffd600;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-logo span {
+            color: #e60000;
+        }
+
+        footer p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            nav a {
+                margin: 0 4px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">UGA<span>Hits</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="artist.html">Artists</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Contact <span>Ugahits</span></h1>
+
+        <p>
+            Have a question, suggestion, music submission, partnership idea,
+            or need help with your account? We would love to hear from you.
+            Get in touch with the Ugahits team today.
+        </p>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                Ugahits is committed to connecting Ugandan artists with music
+                lovers across Uganda and around the world. Reach out to us and
+                our team will get back to you as soon as possible.
+            </p>
+
+            <div class="info-box">
+                <div class="icon">📍</div>
+
+                <div>
+                    <h4>Location</h4>
+                    <p>Western Uganda, Uganda</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="icon">📧</div>
+
+                <div>
+                    <h4>Email</h4>
+                    <p>info@ugahits.com</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="icon">📞</div>
+
+                <div>
+                    <h4>Phone</h4>
+                    <p>+256 XXX XXX XXX</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="icon">🎵</div>
+
+                <div>
+                    <h4>Music Submissions</h4>
+                    <p>
+                        Artists can contact us for assistance with uploading
+                        and promoting their music on Ugahits.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- SOCIAL MEDIA -->
+            <div class="socials">
+                <h3>Follow Ugahits</h3>
+
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="TikTok">♪</a>
+                <a href="#" title="YouTube">▶</a>
+                <a href="#" title="Instagram">◎</a>
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+
+            <h2>Send Us A <span>Message</span></h2>
+
+            <form action="#" method="POST">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="music-submission">Music Submission</option>
+                        <option value="artist-account">Artist Account</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="advertising">Advertising</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    SEND MESSAGE 🚀
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+
+        <h2>Are You A Ugandan Artist?</h2>
+
+        <p>
+            Upload your music and let the world discover your sound through Ugahits.
+        </p>
+
+        <a href="submit.html">Join Ugagits as an Artist</a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            UGA<span>HITS</span>
+        </div>
+
+        <p>
+            © 2026 Ugahits. All Rights Reserved.
+            Promoting Western Uganda Music To The Next Level.
+        </p>
+
+    </footer>
+
+</body>
+</html>

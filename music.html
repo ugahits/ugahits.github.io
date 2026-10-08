@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music - Ugahits | Download Ugandan Music</title>
+
+    <meta name="description"
+          content="Discover and download the latest and old Ugandan music on Ugahits. Explore music from Western Uganda artists and singers.">
+
+    <meta name="keywords"
+          content="Ugandan music, Uganda music download, Western Uganda music, Ugahits, Ugandan songs, new Ugandan music">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #090909;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+        header {
+            background: #000;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffd600;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: red;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ddd;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        .artist-btn {
+            background: #e60000;
+            color: #fff !important;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .artist-btn:hover {
+            background: #ff1a1a;
+        }
+
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.95)),
+                radial-gradient(circle at center, #292000, #000);
+            padding: 80px 20px 70px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffd600;
+        }
+
+        .hero p {
+            color: #bbb;
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        /* SEARCH */
+        .search-area {
+            max-width: 850px;
+            margin: -28px auto 45px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .search-box {
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,.5);
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 18px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+        }
+
+        .search-box button {
+            border: none;
+            background: #ffd600;
+            color: #000;
+            padding: 0 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .search-box button:hover {
+            background: #ffe34d;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px 70px;
+        }
+
+        /* SECTION HEADER */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+            gap: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 27px;
+        }
+
+        .section-header h2 span {
+            color: #ffd600;
+        }
+
+        .view-all {
+            color: #ffd600;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* FILTERS */
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .filter {
+            border: 1px solid #333;
+            color: #bbb;
+            background: #111;
+            padding: 9px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s;
+            font-size: 14px;
+        }
+
+        .filter:hover,
+        .filter.active {
+            background: #ffd600;
+            border-color: #ffd600;
+            color: #000;
+        }
+
+        /* MUSIC GRID */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-bottom: 65px;
+        }
+
+        .music-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .music-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd600;
+            box-shadow: 0 10px 30px rgba(0,0,0,.45);
+        }
+
+        .cover {
+            height: 210px;
+            background:
+                linear-gradient(135deg, #222, #111);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: "UGAHITS";
+            position: absolute;
+            font-size: 34px;
+            font-weight: 900;
+            color: rgba(255,214,0,.08);
+            transform: rotate(-20deg);
+        }
+
+        .music-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #ffd600;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #e60000;
+            color: #fff;
+            padding: 5px 9px;
+            font-size: 11px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .music-info {
+            padding: 17px;
+        }
+
+        .music-info h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .artist-name {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .artist-name span {
+            color: #ffd600;
+        }
+
+        .music-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: #e60000;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .download-btn:hover {
+            background: #ff2020;
+        }
+
+        /* FEATURED MUSIC */
+        .featured {
+            background: linear-gradient(135deg, #171717, #0d0d0d);
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .featured-cover {
+            min-width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffd600;
+            font-size: 45px;
+        }
+
+        .featured-content {
+            flex: 1;
+        }
+
+        .featured-content small {
+            color: #ffd600;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .featured-content h2 {
+            font-size: 28px;
+            margin: 5px 0;
+        }
+
+        .featured-content p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .featured-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-yellow {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn-red {
+            background: #e60000;
+            color: #fff;
+        }
+
+        /* EMPTY SEARCH */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .no-results h3 {
+            color: #ffd600;
+            margin-bottom: 8px;
+        }
+
+        .no-results p {
+            color: #888;
+        }
+
+        /* CTA */
+        .cta {
+            background: #ffd600;
+            color: #000;
+            padding: 45px 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 20px;
+            color: #333;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: #000;
+            color: #ffd600;
+            padding: 12px 22px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+         /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 2px solid #ffd600;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            color: #ffd600;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffd600;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: #ffd600;
+        }
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .music-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .featured-cover {
+                width: 150px;
+            }
+
+            .featured-buttons {
+                justify-content: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            UGA<span>Hits</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html" class="active">Music</a>
+            <a href="artist.html">Artists</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="register.html" class="artist-btn">Upload Music</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <h1>Discover <span>Ugandan Music</span></h1>
+
+    <p>
+        Explore the latest releases, old classics and amazing sounds
+        from Ugandan artists. Download your favorite music on Ugahits.
+    </p>
+
+</section>
+
+
+<!-- SEARCH -->
+<div class="search-area">
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="musicSearch"
+            placeholder="Search for a song, artist or genre..."
+        >
+
+        <button onclick="searchMusic()">
+            🔍 Search
+        </button>
+    </div>
+
+</div>
+
+
+<div class="container">
+
+    <!-- GENRE FILTERS -->
+    <div class="filters">
+
+        <button class="filter active" onclick="filterMusic('all', this)">
+            All Music
+        </button>
+
+        <button class="filter" onclick="filterMusic('afrobeat', this)">
+            Afrobeat
+        </button>
+
+        <button class="filter" onclick="filterMusic('gospel', this)">
+            Gospel
+        </button>
+
+        <button class="filter" onclick="filterMusic('hiphop', this)">
+            Hip Hop
+        </button>
+
+        <button class="filter" onclick="filterMusic('dancehall', this)">
+            Dancehall
+        </button>
+
+        <button class="filter" onclick="filterMusic('traditional', this)">
+            Traditional
+        </button>
+
+        <button class="filter" onclick="filterMusic('western', this)">
+            Western Uganda
+        </button>
+
+    </div>
+
+
+    <!-- LATEST MUSIC -->
+    <div class="section-header">
+
+        <h2>Latest <span>Music</span></h2>
+
+        <a href="#" class="view-all">View All →</a>
+
+    </div>
+
+
+    <div class="music-grid" id="musicGrid">
+
+
+        <!-- MUSIC 1 -->
+        <div class="music-card" data-genre="afrobeat" data-search="omukwano promota afrobeat">
+
+            <div class="cover">
+
+                <span class="badge">NEW</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Omukwano</h3>
+
+                <div class="artist-name">
+                    By <span>Promota Enoch</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Afrobeat</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=omukwano"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 2 -->
+        <div class="music-card" data-genre="western" data-search="western vibes john ug western uganda">
+
+            <div class="cover">
+
+                <span class="badge">NEW</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Western Vibes</h3>
+
+                <div class="artist-name">
+                    By <span>John Ug</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Western</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=western-vibes"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 3 -->
+        <div class="music-card" data-genre="gospel" data-search="mukama gospel david ug gospel">
+
+            <div class="cover">
+
+                <span class="badge">NEW</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Mukama</h3>
+
+                <div class="artist-name">
+                    By <span>David Ug</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Gospel</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=mukama"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 4 -->
+        <div class="music-card" data-genre="dancehall" data-search="party time dancehall lucky boy">
+
+            <div class="cover">
+
+                <span class="badge">HOT</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Party Time</h3>
+
+                <div class="artist-name">
+                    By <span>Lucky Boy</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Dancehall</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=party-time"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 5 -->
+        <div class="music-card" data-genre="hiphop" data-search="street life hip hop mc west">
+
+            <div class="cover">
+
+                <span class="badge">HOT</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Street Life</h3>
+
+                <div class="artist-name">
+                    By <span>MC West</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Hip Hop</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=street-life"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 6 -->
+        <div class="music-card" data-genre="traditional" data-search="omusinga traditional music kasese">
+
+            <div class="cover">
+
+                <span class="badge">NEW</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Omusinga</h3>
+
+                <div class="artist-name">
+                    By <span>Kasese Star</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Traditional</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=omusinga"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 7 -->
+        <div class="music-card" data-genre="afrobeat" data-search="love story afrobeat mary ug">
+
+            <div class="cover">
+
+                <span class="badge">NEW</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Love Story</h3>
+
+                <div class="artist-name">
+                    By <span>Mary Ug</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Afrobeat</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=love-story"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC 8 -->
+        <div class="music-card" data-genre="western" data-search="mbarara city western uganda music">
+
+            <div class="cover">
+
+                <span class="badge">HOT</span>
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Mbarara City</h3>
+
+                <div class="artist-name">
+                    By <span>Western Star</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Western</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=mbarara-city"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+    <div class="no-results" id="noResults">
+
+        <h3>No Music Found</h3>
+
+        <p>
+            We couldn't find a song or artist matching your search.
+            Try another search term.
+        </p>
+
+    </div>
+
+
+    <!-- FEATURED -->
+    <div class="section-header">
+
+        <h2>Featured <span>Music</span></h2>
+
+    </div>
+
+    <div class="featured">
+
+        <div class="featured-cover">
+            ♪
+        </div>
+
+        <div class="featured-content">
+
+            <small>Featured Track</small>
+
+            <h2>Discover Western Uganda</h2>
+
+            <p>
+                Experience fresh sounds and unique music from talented
+                artists across Western Uganda. Ugahits is helping local
+                musicians reach listeners around the world.
+            </p>
+
+            <div class="featured-buttons">
+
+                <a href="artist.html" class="btn btn-yellow">
+                    Explore Artists
+                </a>
+
+                <a href="submit.html" class="btn btn-red">
+                    Upload Your Music
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- OLD MUSIC -->
+    <div class="section-header">
+
+        <h2>Old <span>Classics</span></h2>
+
+        <a href="#" class="view-all">View All →</a>
+
+    </div>
+
+
+    <div class="music-grid">
+
+        <div class="music-card" data-genre="traditional">
+
+            <div class="cover">
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Ugandan Classic</h3>
+
+                <div class="artist-name">
+                    By <span>Classic Artist</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Classic</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=ugandan-classic"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="music-card" data-genre="western">
+
+            <div class="cover">
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Western Uganda Classic</h3>
+
+                <div class="artist-name">
+                    By <span>Western Legend</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Western</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=western-classic"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="music-card" data-genre="gospel">
+
+            <div class="cover">
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Gospel Classic</h3>
+
+                <div class="artist-name">
+                    By <span>Uganda Gospel Star</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Gospel</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=gospel-classic"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="music-card" data-genre="afrobeat">
+
+            <div class="cover">
+
+                <div class="music-icon">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="music-info">
+
+                <h3>Old School Uganda</h3>
+
+                <div class="artist-name">
+                    By <span>Ugandan Legend</span>
+                </div>
+
+                <div class="music-meta">
+                    <span>Afrobeat</span>
+                    <span>MP3</span>
+                </div>
+
+                <a href="download.html?song=old-school-uganda"
+                   class="download-btn">
+                    ↓ Download
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ARTIST CTA -->
+    <div class="cta">
+
+        <h2>Are You A Ugandan Artist?</h2>
+
+        <p>
+            Join Ugahits and share your music with listeners in Uganda
+            and around the world. Create your artist account and start
+            uploading your songs today.
+        </p>
+
+        <a href="submit.html">
+            Join Ugahits as an Artist
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>UGAHITS</h3>
+
+                <p>
+                    Your home for Ugandan music. Discover new artists,
+                    classic hits and the best sounds from Uganda,
+                    with a special focus Uganda talent.
+                </p>
+            </div>
+
+
+            <div>
+
+                <h3>IMPORTANT LINKS</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="artist.html">Artists</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>OTHER LINKS</h3>
+
+                <ul>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 <span>Ugahits</span>.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+<script>
+
+    /* SEARCH MUSIC */
+    function searchMusic() {
+
+        const input = document
+            .getElementById("musicSearch")
+            .value
+            .toLowerCase()
+            .trim();
+
+        const cards = document.querySelectorAll(".music-card");
+        const noResults = document.getElementById("noResults");
+
+        let found = 0;
+
+        cards.forEach(card => {
+
+            const searchText =
+                (card.getAttribute("data-search") || "") +
+                " " +
+                card.innerText.toLowerCase();
+
+            if (searchText.includes(input)) {
+
+                card.style.display = "";
+
+                found++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        if (found === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+
+    /* LIVE SEARCH */
+    document
+        .getElementById("musicSearch")
+        .addEventListener("keyup", function(event) {
+
+            if (event.key === "Enter") {
+                searchMusic();
+            }
+
+        });
+
+
+    /* FILTER MUSIC */
+    function filterMusic(genre, button) {
+
+        const cards = document.querySelectorAll(".music-card");
+        const noResults = document.getElementById("noResults");
+
+        document
+            .querySelectorAll(".filter")
+            .forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        let found = 0;
+
+        cards.forEach(card => {
+
+            const cardGenre = card.getAttribute("data-genre");
+
+            if (genre === "all" || cardGenre === genre) {
+
+                card.style.display = "";
+                found++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        if (found === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+        /* Clear search when filtering */
+        document.getElementById("musicSearch").value = "";
+
+    }
+
+</script>
+
+</body>
+</html>

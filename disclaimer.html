@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Disclaimer | Ugahits</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #090909;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            background: #000;
+            border-bottom: 2px solid #ffd600;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ffd600;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.95)),
+                radial-gradient(circle at center, #420000, #090909 70%);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #ffd600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #e60000;
+        }
+
+        .hero p {
+            color: #ccc;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* MAIN */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .disclaimer-wrapper {
+            padding: 70px 0;
+        }
+
+        .last-updated {
+            background: #111;
+            border-left: 5px solid #ffd600;
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            color: #bbb;
+        }
+
+        .last-updated strong {
+            color: #ffd600;
+        }
+
+        /* IMPORTANT NOTICE */
+        .notice {
+            background: #1a0000;
+            border: 1px solid #e60000;
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 30px;
+        }
+
+        .notice h3 {
+            color: #ffd600;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .notice p {
+            color: #ccc;
+        }
+
+        /* SECTIONS */
+        .disclaimer-section {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: .3s;
+        }
+
+        .disclaimer-section:hover {
+            border-color: #e60000;
+        }
+
+        .disclaimer-section h2 {
+            color: #ffd600;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .disclaimer-section h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 20px 0 8px;
+        }
+
+        .disclaimer-section p {
+            color: #bbb;
+            margin-bottom: 14px;
+        }
+
+        .disclaimer-section ul {
+            margin: 10px 0 15px 25px;
+            color: #bbb;
+        }
+
+        .disclaimer-section li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: #ffd600;
+            font-weight: bold;
+        }
+
+        .red {
+            color: #e60000;
+            font-weight: bold;
+        }
+
+        /* HIGHLIGHT BOX */
+        .warning-box {
+            background: #090909;
+            border-left: 4px solid #e60000;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box strong {
+            color: #ffd600;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: #000;
+            border-top: 2px solid #ffd600;
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            color: #ffd600;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #aaa;
+            max-width: 650px;
+            margin: auto auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e60000;
+            color: #fff;
+            padding: 13px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn.yellow {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn.yellow:hover {
+            background: #e60000;
+            color: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 1px solid #222;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            color: #ffd600;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: #888;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffd600;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: #ffd600;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .disclaimer-section {
+                padding: 22px;
+            }
+
+            .disclaimer-section h2 {
+                font-size: 21px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            UGA<span>HITS</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="artists.html">Artists</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h1>Website <span>Disclaimer</span></h1>
+
+        <p>
+            Important information about the Ugahits platform,
+            music content, artist uploads and our services.
+        </p>
+
+    </section>
+
+
+    <!-- DISCLAIMER CONTENT -->
+    <main class="disclaimer-wrapper">
+
+        <div class="container">
+
+            <div class="last-updated">
+                <strong>Last Updated:</strong> October 1, 2026
+            </div>
+
+
+            <!-- IMPORTANT NOTICE -->
+            <div class="notice">
+
+                <h3>Important Disclaimer</h3>
+
+                <p>
+                    The information and services provided through
+                    Ugahits are intended for general informational,
+                    entertainment and music-discovery purposes.
+                    By using this website, you acknowledge the
+                    limitations described below.
+                </p>
+
+            </div>
+
+
+            <!-- 1 -->
+            <section class="disclaimer-section">
+
+                <h2>1. About Ugahits</h2>
+
+                <p>
+                    Ugahits is an online music platform based in
+                    Uganda that provides a digital space for users
+                    to discover Ugandan music and for artists to
+                    share their creative work.
+                </p>
+
+                <p>
+                    Ugahits was established in 2023 by
+                    <span class="highlight">Promota Enoch Ug</span>
+                    with a mission of promoting Western Uganda
+                    music and helping Ugandan artists reach
+                    wider audiences.
+                </p>
+
+            </section>
+
+
+            <!-- 2 -->
+            <section class="disclaimer-section">
+
+                <h2>2. User-Generated Content</h2>
+
+                <p>
+                    Some content displayed on Ugahits may be submitted
+                    by artists, users or other third parties.
+                </p>
+
+                <p>
+                    Such content may include music, artist names,
+                    biographies, photographs, artwork, descriptions,
+                    links and other materials.
+                </p>
+
+                <div class="warning-box">
+
+                    <p>
+                        <strong>Important:</strong>
+                        Ugahits does not necessarily create, verify
+                        or endorse every piece of user-submitted content.
+                    </p>
+
+                </div>
+
+                <p>
+                    The opinions and statements expressed by users
+                    or artists are their own and do not necessarily
+                    represent the views of Ugahits.
+                </p>
+
+            </section>
+
+
+            <!-- 3 -->
+            <section class="disclaimer-section">
+
+                <h2>3. Music Content</h2>
+
+                <p>
+                    Music available through Ugahits may be provided
+                    by artists, labels, producers or other authorized
+                    content providers.
+                </p>
+
+                <p>
+                    Ugahits does not guarantee that every item of
+                    music information, including artist names,
+                    release dates, descriptions or other metadata,
+                    will always be complete or error-free.
+                </p>
+
+                <p>
+                    Users should contact Ugahits if they identify
+                    content that appears to be inaccurate, unauthorized
+                    or infringing.
+                </p>
+
+            </section>
+
+
+            <!-- 4 -->
+            <section class="disclaimer-section">
+
+                <h2>4. Copyright Disclaimer</h2>
+
+                <p>
+                    Copyright and other intellectual property rights
+                    in music, photographs, artwork, videos, logos and
+                    other materials remain with their respective owners
+                    unless otherwise stated.
+                </p>
+
+                <p>
+                    Users must not reproduce, redistribute, modify,
+                    sell or commercially exploit copyrighted material
+                    without the appropriate authorization.
+                </p>
+
+                <p>
+                    If you believe that content on Ugahits infringes
+                    your copyright, please contact us with sufficient
+                    information to allow us to investigate the matter.
+                </p>
+
+            </section>
+
+
+            <!-- 5 -->
+            <section class="disclaimer-section">
+
+                <h2>5. Artist Responsibility</h2>
+
+                <p>
+                    Artists are responsible for the content they upload
+                    to Ugahits.
+                </p>
+
+                <p>Artists should ensure that:</p>
+
+                <ul>
+                    <li>They have the necessary rights to upload their music.</li>
+                    <li>They have appropriate permission for third-party content.</li>
+                    <li>Their uploaded content does not knowingly infringe another person's rights.</li>
+                    <li>The information provided on their artist profile is accurate.</li>
+                    <li>They comply with applicable laws and platform rules.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- 6 -->
+            <section class="disclaimer-section">
+
+                <h2>6. Music Downloads</h2>
+
+                <p>
+                    Ugahits may provide music downloads where the
+                    relevant rights, permissions or licensing
+                    arrangements allow such downloads.
+                </p>
+
+                <p>
+                    Availability of downloads may vary depending on
+                    the particular music release and its applicable
+                    conditions.
+                </p>
+
+                <div class="warning-box">
+
+                    <p>
+                        <strong>Users are responsible</strong> for
+                        ensuring that their use of downloaded music
+                        complies with copyright laws and any applicable
+                        license or usage restrictions.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- 7 -->
+            <section class="disclaimer-section">
+
+                <h2>7. Information Accuracy</h2>
+
+                <p>
+                    We aim to provide accurate and useful information,
+                    but Ugahits does not guarantee that all information
+                    displayed on the website will always be accurate,
+                    complete, current or error-free.
+                </p>
+
+                <p>
+                    Information may change as artists update their
+                    profiles, music releases change or platform
+                    features are modified.
+                </p>
+
+            </section>
+
+
+            <!-- 8 -->
+            <section class="disclaimer-section">
+
+                <h2>8. Third-Party Websites</h2>
+
+                <p>
+                    Ugahits may contain links to external websites,
+                    social media platforms, payment providers or
+                    other third-party services.
+                </p>
+
+                <p>
+                    These websites are operated independently from
+                    Ugahits.
+                </p>
+
+                <p>
+                    Ugahits is not responsible for the availability,
+                    content, security, privacy practices or terms
+                    of third-party websites.
+                </p>
+
+            </section>
+
+
+            <!-- 9 -->
+            <section class="disclaimer-section">
+
+                <h2>9. Payments & Financial Information</h2>
+
+                <p>
+                    Where Ugahits offers paid services, transactions
+                    may involve third-party payment providers.
+                </p>
+
+                <p>
+                    Users should review the applicable payment provider's
+                    terms before completing a transaction.
+                </p>
+
+                <p>
+                    Ugahits does not provide financial, investment,
+                    banking or professional financial advice.
+                </p>
+
+            </section>
+
+
+            <!-- 10 -->
+            <section class="disclaimer-section">
+
+                <h2>10. Website Availability</h2>
+
+                <p>
+                    We aim to keep Ugahits accessible and operational,
+                    but we do not guarantee uninterrupted availability.
+                </p>
+
+                <p>
+                    The website may occasionally be unavailable due to:
+                </p>
+
+                <ul>
+                    <li>Scheduled maintenance.</li>
+                    <li>Technical failures.</li>
+                    <li>Hosting or server problems.</li>
+                    <li>Internet or telecommunications failures.</li>
+                    <li>Security incidents.</li>
+                    <li>Circumstances outside our reasonable control.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- 11 -->
+            <section class="disclaimer-section">
+
+                <h2>11. No Guarantee of Results</h2>
+
+                <p>
+                    Ugahits provides artists with a platform to
+                    showcase their music, but we do not guarantee
+                    a particular number of listeners, downloads,
+                    followers, streams, sales, bookings, income
+                    or other results.
+                </p>
+
+                <p>
+                    The success of an artist or music release may
+                    depend on many factors outside the control of
+                    Ugahits.
+                </p>
+
+            </section>
+
+
+            <!-- 12 -->
+            <section class="disclaimer-section">
+
+                <h2>12. Security Disclaimer</h2>
+
+                <p>
+                    Ugahits takes reasonable steps to protect its
+                    platform and information.
+                </p>
+
+                <p>
+                    However, no website, server or internet transmission
+                    can be guaranteed to be completely secure.
+                </p>
+
+                <p>
+                    Users should protect their passwords and avoid
+                    sharing account credentials with others.
+                </p>
+
+            </section>
+
+
+            <!-- 13 -->
+            <section class="disclaimer-section">
+
+                <h2>13. Limitation of Responsibility</h2>
+
+                <p>
+                    To the extent permitted by applicable law, Ugahits
+                    is not responsible for losses or damages resulting
+                    from circumstances outside its reasonable control,
+                    including third-party content, unauthorized account
+                    access, technical interruptions or misuse of the
+                    platform.
+                </p>
+
+                <p>
+                    Nothing in this Disclaimer is intended to exclude
+                    liability where applicable law does not permit
+                    such exclusion.
+                </p>
+
+            </section>
+
+
+            <!-- 14 -->
+            <section class="disclaimer-section">
+
+                <h2>14. No Professional Advice</h2>
+
+                <p>
+                    Content published on Ugahits is generally intended
+                    for music, entertainment and informational purposes.
+                </p>
+
+                <p>
+                    Ugahits does not provide legal, financial, medical,
+                    investment, accounting or other professional advice
+                    through the platform.
+                </p>
+
+            </section>
+
+
+            <!-- 15 -->
+            <section class="disclaimer-section">
+
+                <h2>15. Changes to This Disclaimer</h2>
+
+                <p>
+                    Ugahits may update this Disclaimer when necessary
+                    to reflect changes to our services, technology,
+                    business practices or legal requirements.
+                </p>
+
+                <p>
+                    Updated versions will be published on this page
+                    with a revised "Last Updated" date.
+                </p>
+
+            </section>
+
+
+            <!-- 16 -->
+            <section class="disclaimer-section">
+
+                <h2>16. Governing Law</h2>
+
+                <p>
+                    This Disclaimer is intended to operate in accordance
+                    with applicable laws and regulations of Uganda,
+                    subject to any mandatory legal requirements that
+                    may apply.
+                </p>
+
+            </section>
+
+
+            <!-- 17 -->
+            <section class="disclaimer-section">
+
+                <h2>17. Contact Us</h2>
+
+                <p>
+                    If you have questions about this Disclaimer,
+                    copyright concerns, artist content or any other
+                    issue concerning Ugahits, please contact us.
+                </p>
+
+                <p>
+                    <span class="highlight">Email:</span>
+                    info@ugahits.com
+                </p>
+
+                <p>
+                    <span class="highlight">Location:</span>
+                    Western Uganda
+                </p>
+
+                <p>
+                    You can also visit our
+                    <a href="contact.html"
+                       style="color:#ffd600;font-weight:bold;">
+                        Contact Us
+                    </a>
+                    page.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Need More Information?</h2>
+
+        <p>
+            Read our other legal policies or contact the Ugahits
+            team if you have questions about how the platform works.
+        </p>
+
+        <a href="contact.html" class="btn">
+            Contact Us
+        </a>
+
+        <a href="terms.html" class="btn yellow">
+            Terms & Conditions
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>UGAHITS</h3>
+
+                <p>
+                    Your home for Ugandan music. Discover new artists,
+                    classic hits and the best sounds from Uganda,
+                    with a special focus on Western Uganda talent.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="music.html">Music</a>
+                    </li>
+
+                    <li>
+                        <a href="artists.html">Artists</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Legal</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="terms.html">
+                            Terms & Conditions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="privacy.html">
+                            Privacy Policy
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="disclaimer.html">
+                            Disclaimer
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 <span>Ugahits</span>.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ugahits</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #090909;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: #000;
+            border-bottom: 2px solid #ffd600;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: yellow;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: red;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.9)),
+                radial-gradient(circle at center, #3b0000, #090909 70%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: aliceblue;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: yellow;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #ddd;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* GENERAL */
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #ffd600;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #aaa;
+        }
+
+        /* ABOUT INTRO */
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: white;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #ccc;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .highlight {
+            color: #ffd600;
+            font-weight: bold;
+        }
+
+        .red-text {
+            color: #e60000;
+            font-weight: bold;
+        }
+
+        /* ABOUT BOX */
+        .about-box {
+            background: #111;
+            border: 2px solid #e60000;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(230, 0, 0, .15);
+        }
+
+        .about-box .big-logo {
+            font-size: 55px;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .big-logo span {
+            color: #ffd600;
+        }
+
+        .about-box p {
+            color: #bbb;
+        }
+
+        /* MISSION & VISION */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .mission-card {
+            background: #111;
+            border: 1px solid #333;
+            border-top: 5px solid #ffd600;
+            padding: 35px;
+            border-radius: 12px;
+            transition: .3s;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+            border-color: #ffd600;
+        }
+
+        .mission-card h3 {
+            color: #ffd600;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .mission-card p {
+            color: #bbb;
+        }
+
+        /* STORY */
+        .story {
+            background: #000;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .story-content h2 {
+            color: #ffd600;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .story-content p {
+            color: #ccc;
+            margin-bottom: 18px;
+        }
+
+        /* VALUES */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .value-card {
+            background: #111;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: .3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: #e60000;
+        }
+
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+            color: #ffd600;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* STATS */
+        .stats {
+            background: #e60000;
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat h2 {
+            font-size: 40px;
+            color: #ffd600;
+        }
+
+        .stat p {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)),
+                #111;
+        }
+
+        .cta h2 {
+            color: #ffd600;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #bbb;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e60000;
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 7px;
+            font-weight: bold;
+            margin: 5px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn.yellow {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn.yellow:hover {
+            background: #e60000;
+            color: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 2px solid #ffd600;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            color: #ffd600;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffd600;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: #ffd600;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .about-intro,
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid,
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .values-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-box {
+                padding: 25px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">UGA<span>Hits</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="artist.html">Artists</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About <span>Ugahits</span></h1>
+
+            <p>
+                Discover the story behind Ugahits — a platform created
+                to promote Ugandan music, empower artists and connect
+                Ugandan sounds with listeners around the world.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ABOUT INTRO -->
+    <section>
+        <div class="container">
+
+            <div class="about-intro">
+
+                <div class="about-text">
+
+                    <h2>Who We Are</h2>
+
+                    <p>
+                        <span class="highlight">Ugahits</span> is an online
+                        music store based in Western Uganda that enables
+                        music lovers from across the globe to discover
+                        and download new and old Ugandan music.
+                    </p>
+
+                    <p>
+                        Established in <span class="highlight">2023</span>
+                        by Ugandan innovator
+                        <span class="red-text">Promota Enoch Ug</span>,
+                        Ugahits was created with a mission of taking
+                        Western Uganda music to the next level.
+                    </p>
+
+                    <p>
+                        We provide a platform where Ugandan singers,
+                        musicians and artists can create accounts,
+                        upload their music and share their creativity
+                        with audiences in Uganda and beyond.
+                    </p>
+
+                    <p>
+                        From established musicians to upcoming talent,
+                        Ugahits aims to give Ugandan artists a digital
+                        home where their music can be discovered,
+                        appreciated and shared.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <div class="big-logo">
+                        UGA<span>HITS</span>
+                    </div>
+
+                    <p>
+                        <strong>Ugandan Music.</strong><br>
+                        Western Uganda Talent.<br>
+                        Global Audience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MISSION & VISION -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Our Mission & Vision</h2>
+                <p>What drives Ugahits forward.</p>
+            </div>
+
+            <div class="mission-grid">
+
+                <div class="mission-card">
+
+                    <h3>🎯 Our Mission</h3>
+
+                    <p>
+                        To promote Ugandan music, especially music from
+                        Western Uganda, by providing artists with a
+                        platform to showcase their work and helping
+                        music lovers easily discover and access
+                        Ugandan sounds.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-card">
+
+                    <h3>🚀 Our Vision</h3>
+
+                    <p>
+                        To become a leading digital destination for
+                        Ugandan music, connecting talented artists
+                        from Uganda with listeners across Africa and
+                        the rest of the world.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR STORY -->
+    <section class="story">
+
+        <div class="container">
+
+            <div class="story-content">
+
+                <h2>Our Story</h2>
+
+                <p>
+                    Ugahits was born from a passion for Ugandan music
+                    and a desire to give talented artists, particularly
+                    from Western Uganda, greater digital visibility.
+                </p>
+
+                <p>
+                    In 2023, Ugandan innovator
+                    <strong class="highlight">Promota Enoch Ug</strong>
+                    established Ugahits with the goal of creating an
+                    online platform where Ugandan music could reach
+                    audiences beyond local communities.
+                </p>
+
+                <p>
+                    Today, the platform continues to focus on discovering
+                    new talent, preserving music and creating opportunities
+                    for Ugandan artists to share their work with the world.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR VALUES -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>What We Believe In</h2>
+                <p>The values behind the Ugahits platform.</p>
+            </div>
+
+
+            <div class="values-grid">
+
+                <div class="value-card">
+                    <div class="value-icon">🎵</div>
+                    <h3>Music</h3>
+                    <p>
+                        We celebrate Ugandan music and the creativity
+                        of the artists who make it.
+                    </p>
+                </div>
+
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Community</h3>
+                    <p>
+                        We believe music can connect artists, fans and
+                        communities together.
+                    </p>
+                </div>
+
+
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>
+                        We use digital technology to create new
+                        opportunities for Ugandan musicians.
+                    </p>
+                </div>
+
+
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>
+                        We want Ugandan music to be discovered and
+                        enjoyed by listeners around the world.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h2>2023</h2>
+                    <p>Founded</p>
+                </div>
+
+                <div class="stat">
+                    <h2>100%</h2>
+                    <p>Ugandan Music Focus</p>
+                </div>
+
+                <div class="stat">
+                    <h2>UG</h2>
+                    <p>Made for Ugandan Artists & music lovers</p>
+                </div>
+
+                <div class="stat">
+                    <h2>🌍</h2>
+                    <p>Global Audience</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Be Part Of The Ugahits Journey</h2>
+
+        <p>
+            Are you an artist with music to share?
+            Or are you a music lover looking for the latest
+            and classic Ugandan sounds?
+            Ugahits is here for you.
+        </p>
+
+        <a href="submit.html" class="btn">
+            Join Ugahits as an Artist
+        </a>
+
+        <a href="music.html" class="btn yellow">
+            Explore Music
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>UGAHITS</h3>
+
+                <p>
+                    Your home for Ugandan music. Discover new artists,
+                    classic hits and the best sounds from Uganda,
+                    with a special focus on Western Uganda talent.
+                </p>
+            </div>
+
+
+            <div>
+
+                <h3>IMPORTANT LINKS</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="artist.html">Artists</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>OTHER LINKS</h3>
+
+                <ul>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 <span>Ugahits</span>.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms & Conditions | Ugahits</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #090909;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            background: #000;
+            border-bottom: 2px solid #ffd600;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ffd600;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.95)),
+                radial-gradient(circle at center, #420000, #090909 70%);
+
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #ffd600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #e60000;
+        }
+
+        .hero p {
+            color: #ccc;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* MAIN */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .terms-wrapper {
+            padding: 70px 0;
+        }
+
+        .last-updated {
+            background: #111;
+            border-left: 5px solid #ffd600;
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            color: #bbb;
+        }
+
+        .last-updated strong {
+            color: #ffd600;
+        }
+
+        /* TERMS SECTIONS */
+        .terms-section {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: .3s;
+        }
+
+        .terms-section:hover {
+            border-color: #e60000;
+        }
+
+        .terms-section h2 {
+            color: #ffd600;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .terms-section h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 20px 0 8px;
+        }
+
+        .terms-section p {
+            color: #bbb;
+            margin-bottom: 14px;
+        }
+
+        .terms-section ul {
+            margin: 10px 0 15px 25px;
+            color: #bbb;
+        }
+
+        .terms-section li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: #ffd600;
+            font-weight: bold;
+        }
+
+        .red {
+            color: #e60000;
+            font-weight: bold;
+        }
+
+        /* IMPORTANT NOTICE */
+        .notice {
+            background: #1a0000;
+            border: 1px solid #e60000;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .notice h3 {
+            color: #ffd600;
+            margin-bottom: 10px;
+        }
+
+        .notice p {
+            color: #ccc;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: #000;
+            border-top: 2px solid #ffd600;
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            color: #ffd600;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #aaa;
+            max-width: 650px;
+            margin: auto auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e60000;
+            color: #fff;
+            padding: 13px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn.yellow {
+            background: #ffd600;
+            color: #000;
+        }
+
+        .btn.yellow:hover {
+            background: #e60000;
+            color: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 1px solid #222;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            color: #ffd600;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: #888;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffd600;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: #ffd600;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .terms-section {
+                padding: 22px;
+            }
+
+            .terms-section h2 {
+                font-size: 21px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            UGA<span>HITS</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="artists.html">Artists</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h1>Terms <span>&</span> Conditions</h1>
+
+        <p>
+            Please read these terms carefully before using the
+            Ugahits website and services.
+        </p>
+
+    </section>
+
+
+    <!-- TERMS -->
+    <main class="terms-wrapper">
+
+        <div class="container">
+
+            <div class="last-updated">
+                <strong>Last Updated:</strong> October 1, 2026
+            </div>
+
+
+            <!-- INTRO -->
+            <div class="notice">
+
+                <h3>Important Notice</h3>
+
+                <p>
+                    These Terms and Conditions govern your access to and
+                    use of the Ugahits website, music platform and related
+                    services. By accessing or using Ugahits, you agree to
+                    comply with these Terms and Conditions.
+                </p>
+
+            </div>
+
+
+            <!-- 1 -->
+            <section class="terms-section">
+
+                <h2>1. About Ugahits</h2>
+
+                <p>
+                    Ugahits is an online music platform based in Uganda
+                    that provides a digital space for discovering,
+                    sharing and accessing Ugandan music.
+                </p>
+
+                <p>
+                    The platform was established in 2023 by
+                    <span class="highlight">Promota Enoch Ug</span>
+                    with the mission of promoting Western Uganda music
+                    and providing opportunities for Ugandan artists
+                    to reach wider audiences.
+                </p>
+
+            </section>
+
+
+            <!-- 2 -->
+            <section class="terms-section">
+
+                <h2>2. Acceptance of These Terms</h2>
+
+                <p>
+                    By visiting, registering on, uploading content to,
+                    downloading music from or otherwise using Ugahits,
+                    you acknowledge that you have read and accepted
+                    these Terms and Conditions.
+                </p>
+
+                <p>
+                    If you do not agree with any part of these terms,
+                    you should not use the Ugahits platform.
+                </p>
+
+            </section>
+
+
+            <!-- 3 -->
+            <section class="terms-section">
+
+                <h2>3. User Accounts</h2>
+
+                <p>
+                    Some Ugahits services may require you to create
+                    an account.
+                </p>
+
+                <p>When creating an account, you agree to:</p>
+
+                <ul>
+                    <li>Provide accurate and current information.</li>
+                    <li>Keep your login credentials secure.</li>
+                    <li>Not share your account with unauthorized persons.</li>
+                    <li>Notify Ugahits if you suspect unauthorized access.</li>
+                    <li>Use your account only for lawful purposes.</li>
+                </ul>
+
+                <p>
+                    Ugahits reserves the right to suspend or terminate
+                    accounts that violate these Terms.
+                </p>
+
+            </section>
+
+
+            <!-- 4 -->
+            <section class="terms-section">
+
+                <h2>4. Artist Accounts</h2>
+
+                <p>
+                    Ugandan artists may create accounts and upload
+                    their music to the platform subject to these Terms.
+                </p>
+
+                <p>
+                    Artists are responsible for ensuring that they have
+                    the necessary rights and permissions to upload and
+                    distribute every piece of content they submit.
+                </p>
+
+                <p>
+                    By uploading content, an artist confirms that the
+                    content does not knowingly infringe another person's
+                    copyright, trademark, privacy or other legal rights.
+                </p>
+
+            </section>
+
+
+            <!-- 5 -->
+            <section class="terms-section">
+
+                <h2>5. Music & User Content</h2>
+
+                <p>
+                    Users and artists may encounter music, artwork,
+                    photographs, descriptions and other content on
+                    Ugahits.
+                </p>
+
+                <p>
+                    Unless otherwise stated, ownership of such content
+                    remains with its respective copyright owner or
+                    content provider.
+                </p>
+
+                <p>
+                    Users must not reproduce, redistribute, sell,
+                    modify or commercially exploit copyrighted content
+                    obtained through Ugahits without appropriate
+                    authorization.
+                </p>
+
+            </section>
+
+
+            <!-- 6 -->
+            <section class="terms-section">
+
+                <h2>6. Copyright & Intellectual Property</h2>
+
+                <p>
+                    Ugahits respects the intellectual property rights
+                    of artists, producers, labels, photographers,
+                    composers and other rights holders.
+                </p>
+
+                <p>
+                    If you believe that content available on Ugahits
+                    infringes your copyright or other intellectual
+                    property rights, you may contact Ugahits with
+                    sufficient information to identify the disputed
+                    content and explain the basis of your claim.
+                </p>
+
+                <p>
+                    Ugahits may review reported content and take
+                    appropriate action where necessary, which may
+                    include removing or restricting access to content.
+                </p>
+
+            </section>
+
+
+            <!-- 7 -->
+            <section class="terms-section">
+
+                <h2>7. Music Downloads</h2>
+
+                <p>
+                    Ugahits may provide music downloads for users
+                    according to the permissions, licensing arrangements
+                    and conditions applicable to the particular content.
+                </p>
+
+                <p>
+                    Downloaded music is intended to be used only in
+                    accordance with applicable copyright laws and any
+                    specific license or usage conditions associated
+                    with the content.
+                </p>
+
+                <p>
+                    Users must not use Ugahits downloads to facilitate
+                    unauthorized commercial distribution or copyright
+                    infringement.
+                </p>
+
+            </section>
+
+
+            <!-- 8 -->
+            <section class="terms-section">
+
+                <h2>8. Prohibited Activities</h2>
+
+                <p>
+                    Users must not use Ugahits to:
+                </p>
+
+                <ul>
+                    <li>Upload content they do not have permission to distribute.</li>
+                    <li>Upload malware, viruses or harmful software.</li>
+                    <li>Impersonate another person or artist.</li>
+                    <li>Attempt to gain unauthorized access to the platform.</li>
+                    <li>Abuse, harass or threaten other users.</li>
+                    <li>Use automated systems to abuse or overload the website.</li>
+                    <li>Engage in fraudulent activity.</li>
+                    <li>Violate applicable laws or regulations.</li>
+                    <li>Use the platform to infringe intellectual property rights.</li>
+                </ul>
+
+            </section>
+
+
+            <!-- 9 -->
+            <section class="terms-section">
+
+                <h2>9. Payments & Transactions</h2>
+
+                <p>
+                    If Ugahits introduces paid downloads, subscriptions,
+                    advertising services, artist services or other
+                    transactions, additional payment terms may apply.
+                </p>
+
+                <p>
+                    Prices, payment methods, refund conditions and
+                    applicable fees will be communicated to users
+                    before a transaction where reasonably applicable.
+                </p>
+
+                <p>
+                    Users are responsible for providing accurate payment
+                    information and completing transactions through
+                    authorized payment channels.
+                </p>
+
+            </section>
+
+
+            <!-- 10 -->
+            <section class="terms-section">
+
+                <h2>10. Artist Earnings</h2>
+
+                <p>
+                    Where Ugahits provides monetization or artist
+                    revenue-sharing services, the applicable earning
+                    structure and payment requirements will be
+                    communicated separately.
+                </p>
+
+                <p>
+                    Artists may be required to provide accurate
+                    identification, payment and account information
+                    before receiving eligible payments.
+                </p>
+
+            </section>
+
+
+            <!-- 11 -->
+            <section class="terms-section">
+
+                <h2>11. Content Moderation</h2>
+
+                <p>
+                    Ugahits may review, restrict, remove or disable
+                    access to content that it reasonably believes
+                    violates these Terms, applicable law, intellectual
+                    property rights or the safety of the platform.
+                </p>
+
+                <p>
+                    Where appropriate, Ugahits may also suspend or
+                    terminate accounts associated with serious or
+                    repeated violations.
+                </p>
+
+            </section>
+
+
+            <!-- 12 -->
+            <section class="terms-section">
+
+                <h2>12. Third-Party Links & Services</h2>
+
+                <p>
+                    Ugahits may contain links to third-party websites,
+                    platforms or services.
+                </p>
+
+                <p>
+                    Ugahits does not necessarily control or endorse
+                    third-party websites and is not responsible for
+                    their content, policies, availability or practices.
+                </p>
+
+                <p>
+                    Users should review the terms and privacy policies
+                    of third-party services before using them.
+                </p>
+
+            </section>
+
+
+            <!-- 13 -->
+            <section class="terms-section">
+
+                <h2>13. Website Availability</h2>
+
+                <p>
+                    We aim to keep Ugahits available and functioning
+                    properly. However, we cannot guarantee that the
+                    website will always be available, uninterrupted or
+                    completely free from technical errors.
+                </p>
+
+                <p>
+                    Maintenance, updates, technical problems,
+                    telecommunications failures or circumstances
+                    outside our reasonable control may temporarily
+                    affect the service.
+                </p>
+
+            </section>
+
+
+            <!-- 14 -->
+            <section class="terms-section">
+
+                <h2>14. Disclaimer</h2>
+
+                <p>
+                    Ugahits provides its platform and services on an
+                    evolving basis. To the extent permitted by applicable
+                    law, information and services may be subject to
+                    changes, interruptions or limitations.
+                </p>
+
+                <p>
+                    Users should independently verify information that
+                    is important to them before relying on it.
+                </p>
+
+            </section>
+
+
+            <!-- 15 -->
+            <section class="terms-section">
+
+                <h2>15. Limitation of Liability</h2>
+
+                <p>
+                    To the extent permitted by applicable law, Ugahits
+                    and its operators will not be responsible for losses
+                    arising from unauthorized use of user accounts,
+                    third-party content, service interruptions or
+                    activities outside Ugahits' reasonable control.
+                </p>
+
+                <p>
+                    Nothing in these Terms is intended to exclude or
+                    limit liability where such exclusion or limitation
+                    would be prohibited by applicable law.
+                </p>
+
+            </section>
+
+
+            <!-- 16 -->
+            <section class="terms-section">
+
+                <h2>16. Privacy</h2>
+
+                <p>
+                    Your use of Ugahits may involve the collection and
+                    processing of certain information. Such processing
+                    is subject to the Ugahits Privacy Policy.
+                </p>
+
+                <p>
+                    Please review our Privacy Policy to understand how
+                    information is collected, used, stored and protected.
+                </p>
+
+            </section>
+
+
+            <!-- 17 -->
+            <section class="terms-section">
+
+                <h2>17. Termination</h2>
+
+                <p>
+                    Ugahits may suspend or terminate access to an account
+                    or service where a user violates these Terms,
+                    engages in unlawful activity, abuses the platform
+                    or creates a significant risk to Ugahits or other
+                    users.
+                </p>
+
+                <p>
+                    Users may stop using the platform at any time.
+                </p>
+
+            </section>
+
+
+            <!-- 18 -->
+            <section class="terms-section">
+
+                <h2>18. Changes to These Terms</h2>
+
+                <p>
+                    Ugahits may update these Terms and Conditions from
+                    time to time to reflect changes to the platform,
+                    services, technology or applicable legal requirements.
+                </p>
+
+                <p>
+                    Updated terms will be published on this page with
+                    a revised "Last Updated" date.
+                </p>
+
+                <p>
+                    Continued use of Ugahits after changes are published
+                    may constitute acceptance of the updated terms,
+                    subject to applicable law.
+                </p>
+
+            </section>
+
+
+            <!-- 19 -->
+            <section class="terms-section">
+
+                <h2>19. Governing Law</h2>
+
+                <p>
+                    These Terms shall be interpreted and applied in
+                    accordance with the applicable laws of Uganda,
+                    subject to any mandatory legal rights or requirements
+                    that may apply to a particular user or transaction.
+                </p>
+
+            </section>
+
+
+            <!-- 20 -->
+            <section class="terms-section">
+
+                <h2>20. Contact Us</h2>
+
+                <p>
+                    If you have questions about these Terms and Conditions,
+                    copyright concerns, account issues or other legal
+                    inquiries, please contact the Ugahits team.
+                </p>
+
+                <p>
+                    <span class="highlight">Email:</span>
+                    info@ugahits.com
+                </p>
+
+                <p>
+                    <span class="highlight">Location:</span>
+                    Western Uganda
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Have Questions?</h2>
+
+        <p>
+            If you need clarification about these Terms or any
+            Ugahits service, our team is ready to hear from you.
+        </p>
+
+        <a href="contact.html" class="btn">
+            Contact Us
+        </a>
+
+        <a href="about.html" class="btn yellow">
+            About Ugahits
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>UGAHITS</h3>
+
+                <p>
+                    Your home for Ugandan music. Discover new artists,
+                    classic hits and the best sounds from Uganda,
+                    with a special focus on Western Uganda talent.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="music.html">Music</a>
+                    </li>
+
+                    <li>
+                        <a href="artists.html">Artists</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Legal</h3>
+
+                <ul>
+                    <li>
+                        <a href="terms.html">Terms & Conditions</a>
+                    </li>
+
+                    <li>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+
+                    <li>
+                        <a href="register.html">Create Account</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 <span>Ugahits</span>.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

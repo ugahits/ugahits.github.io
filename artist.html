@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists - Ugahits</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #090909;
+            color: #fff;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #000;
+            border-bottom: 3px solid #ffd600;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+            color: #ffd600;
+        }
+
+        .logo span {
+            color: #e60000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd600;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.75),
+                    rgba(0,0,0,0.95)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #b00000,
+                    #000 65%
+                );
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffd600;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-container {
+            width: 90%;
+            max-width: 700px;
+            margin: -30px auto 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            display: flex;
+            background: #151515;
+            border: 2px solid #ffd600;
+            border-radius: 50px;
+            padding: 6px;
+        }
+
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 16px;
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .search-box button {
+            background: #e60000;
+            border: none;
+            color: #fff;
+            padding: 0 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 70px;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-left: 5px solid #e60000;
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+        }
+
+        .section-title h2 span {
+            color: #ffd600;
+        }
+
+        .section-title p {
+            color: #888;
+        }
+
+        /* ================= ARTIST GRID ================= */
+
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .artist-card {
+            background: #121212;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #292929;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-8px);
+            border-color: #ffd600;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+        }
+
+        .artist-image {
+            height: 240px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.1),
+                    rgba(0,0,0,0.7)
+                ),
+                linear-gradient(
+                    135deg,
+                    #e60000,
+                    #222,
+                    #000
+                );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artist-placeholder {
+            font-size: 75px;
+            color: #ffd600;
+        }
+
+        .verified {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #ffd600;
+            color: #000;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .artist-info {
+            padding: 18px;
+        }
+
+        .artist-info h3 {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .artist-info h3 span {
+            color: #ffd600;
+        }
+
+        .artist-info p {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .artist-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #e60000;
+            color: #fff;
+            padding: 11px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .artist-btn:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+        /* ================= FEATURED ARTIST ================= */
+
+        .featured {
+            background:
+                linear-gradient(
+                    90deg,
+                    #160000,
+                    #090909
+                );
+
+            border: 1px solid #4a0000;
+            border-left: 5px solid #e60000;
+            border-radius: 12px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .featured-image {
+            width: 220px;
+            height: 220px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 5px solid #ffd600;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-placeholder {
+            font-size: 70px;
+            color: #e60000;
+        }
+
+        .featured-content h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .featured-content h2 span {
+            color: #ffd600;
+        }
+
+        .featured-content .location {
+            color: #e60000;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .featured-content p {
+            color: #bbb;
+            line-height: 1.7;
+            max-width: 650px;
+            margin-bottom: 20px;
+        }
+
+        .featured-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #ffd600;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* ================= JOIN CTA ================= */
+
+        .join-section {
+            background: #e60000;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .join-section h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .join-section p {
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            background: #000;
+            color: #ffd600;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .join-btn:hover {
+            background: #ffd600;
+            color: #000;
+        }
+
+         /* FOOTER */
+        footer {
+            background: #000;
+            border-top: 2px solid #ffd600;
+            padding: 45px 7% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            color: #ffd600;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffd600;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: #ffd600;
+        }
+
+        @media (max-width: 750px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 5px 8px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .artist-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .featured {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .artist-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .search-box button {
+                padding: 0 18px;
+            }
+
+            .artist-image {
+                height: 280px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            UGA<span>Hits</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="artist.html" class="active">Artists</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>Discover <span>Ugandan Artists</span></h1>
+
+        <p>
+            Explore talented artists from Western Uganda and across the
+            country. Discover their music, follow their journey and support
+            the artists who are taking Ugandan music to the next level.
+        </p>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-container">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="artistSearch"
+                placeholder="Search artist name..."
+                onkeyup="searchArtists()"
+            >
+
+            <button onclick="searchArtists()">
+                SEARCH
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FEATURED ARTIST ================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Featured <span>Artist</span></h2>
+
+            <p>Artist of the moment</p>
+
+        </div>
+
+
+        <div class="featured">
+
+            <div class="featured-image">
+
+                <img src="mariat.jpg"
+                     alt="Featured Artist">
+                </div>
+
+            </div>
+
+
+            <div class="featured-content">
+
+                <h2>Promota <span>Enoch Ug</span> ✓</h2>
+
+                <div class="location">
+                    📍 Western Uganda
+                </div>
+
+                <p>
+                    Discover the story, music and creative journey of
+                    Ugandan artists through Ugahits. This featured artist
+                    section can be automatically connected to your database
+                    to display your current featured artist.
+                </p>
+
+                <a href="#" class="featured-btn">
+                    VIEW ARTIST
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ARTISTS ================= -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>All <span>Artists</span></h2>
+
+            <p>Discover new sounds</p>
+
+        </div>
+
+
+        <div class="artist-grid" id="artistGrid">
+
+
+            <!-- ARTIST 1 -->
+
+            <div class="artist-card" data-name="Artist One">
+
+                <div class="artist-image">
+
+                    <!-- Replace with image -->
+                    <!--
+                    <img src="images/artist1.jpg"
+                         alt="Artist One">
+                    -->
+
+                    <div class="artist-placeholder">
+                        🎤
+                    </div>
+
+                    <div class="verified">✓</div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>One</span></h3>
+
+                    <p>📍 Western Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 2 -->
+
+            <div class="artist-card" data-name="Artist Two">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎤
+                    </div>
+
+                    <div class="verified">✓</div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Two</span></h3>
+
+                    <p>📍 Mbarara, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 3 -->
+
+            <div class="artist-card" data-name="Artist Three">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎧
+                    </div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Three</span></h3>
+
+                    <p>📍 Bushenyi, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 4 -->
+
+            <div class="artist-card" data-name="Artist Four">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎤
+                    </div>
+
+                    <div class="verified">✓</div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Four</span></h3>
+
+                    <p>📍 Fort Portal, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 5 -->
+
+            <div class="artist-card" data-name="Artist Five">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎵
+                    </div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Five</span></h3>
+
+                    <p>📍 Kabale, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 6 -->
+
+            <div class="artist-card" data-name="Artist Six">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎤
+                    </div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Six</span></h3>
+
+                    <p>📍 Kasese, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 7 -->
+
+            <div class="artist-card" data-name="Artist Seven">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎧
+                    </div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Seven</span></h3>
+
+                    <p>📍 Hoima, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIST 8 -->
+
+            <div class="artist-card" data-name="Artist Eight">
+
+                <div class="artist-image">
+
+                    <div class="artist-placeholder">
+                        🎵
+                    </div>
+
+                    <div class="verified">✓</div>
+
+                </div>
+
+                <div class="artist-info">
+
+                    <h3>Artist <span>Eight</span></h3>
+
+                    <p>📍 Rukungiri, Uganda</p>
+
+                    <a href="#" class="artist-btn">
+                        VIEW PROFILE
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= JOIN CTA ================= -->
+
+    <section class="join-section">
+
+        <h2>Are You A Ugandan Artist? 🎤</h2>
+
+        <p>
+            Join Ugahits today and share your music with listeners
+            across Uganda and around the world.
+        </p>
+
+        <a href="submit.html" class="join-btn">
+            Join Ugahits as an Artist
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>UGAHITS</h3>
+
+                <p>
+                    Your home for Ugandan music. Discover new artists,
+                    classic hits and the best sounds from Uganda,
+                    with a special focus on Western Uganda talent.
+                </p>
+            </div>
+
+
+            <div>
+
+                <h3>IMPORTANT LINKS</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="artist.html">Artists</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>OTHER LINKS</h3>
+
+                <ul>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 <span>Ugahits</span>.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= SEARCH SCRIPT ================= -->
+
+    <script>
+
+        function searchArtists() {
+
+            const input =
+                document.getElementById("artistSearch")
+                .value
+                .toLowerCase();
+
+            const artists =
+                document.querySelectorAll(".artist-card");
+
+            artists.forEach(function(artist) {
+
+                const name =
+                    artist.getAttribute("data-name")
+                    .toLowerCase();
+
+                if (name.includes(input)) {
+
+                    artist.style.display = "block";
+
+                } else {
+
+                    artist.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
